@@ -1,0 +1,19 @@
+{
+  "name": "player-core",
+  "version": "1.0.0",
+  "description": "Player",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "tsc --watch",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "player"
+  ],
+  "author": "leonardoyhl",
+  "dependencies": {
+    "base64-arraybuffer": "^1.0.2"
+  }
+}
