@@ -18,7 +18,7 @@ export interface MusicalInstrumentPlugin {
 
   chooseAudioBuffer(note: Note): AudioBuffer;
 
-  beforePlay(): void;
+  beforePlay(sourceNode: AudioBufferSourceNode, note: Note): AudioBufferSourceNode;
 }
 
 export declare var MusicalInstrumentPlugin: MusicalInstrumentPluginConstructor;

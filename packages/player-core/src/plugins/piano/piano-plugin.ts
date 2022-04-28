@@ -4,6 +4,9 @@ import { MusicalInstrumentPlugin } from '../../musical-instrument-plugin';
 import { Note } from '../../data-format/note';
 import { PIANO_SOUND } from './sound';
 import { AudioDecoder } from '../../audio-decoder';
+import { Step } from '../..';
+
+const PITCH_RATE = [0.0625, 0.125, 0.25, 0.5, 1, 2, 4, 8, 16];
 
 function decodeBase64AsArrayBuffer(base64Map: typeof PIANO_SOUND) {
   const arrayBufferMap: Record<string, ArrayBuffer> = {};
@@ -43,23 +46,28 @@ export class PianoPlugin implements MusicalInstrumentPlugin {
     let { pitch: {
       step, octave, alter,
     } } = note;
-    // if (alter === 1) {
-    //   if (step === 'E') {
-    //     step = 'F' as any;
-    //     alter = 0;
-    //   }
+    if (alter === 1) {
+      if (step === 'E') {
+        step = Step.F;
+        alter = 0;
+      }
 
-    //   if (step === 'B') {
-    //     step = 'C' as any;
-    //     alter = 0;
-    //     octave += 1;
-    //   }
-    // }
-    console.log('[PianoPlugin] chooseAudioBuffer', step, this.audioBufferMap[step], this.audioBufferMap);
+      if (step === 'B') {
+        step = Step.C;
+        alter = 0;
+        octave += 1;
+      }
+    }
+    console.log('[PianoPlugin] chooseAudioBuffer', step, octave, alter, this.audioBufferMap[step]);
     return this.audioBufferMap[step];
   }
 
-  beforePlay(): void {
-    throw new Error('Method not implemented.');
+  beforePlay(sourceNode: AudioBufferSourceNode, note: Note): AudioBufferSourceNode {
+    let { pitch: {
+      step, octave, alter,
+    } } = note;
+    const rate = PITCH_RATE[octave] * (alter ? 1.06 : 1);
+    sourceNode.playbackRate.value = rate;
+    return sourceNode;
   }
 }
