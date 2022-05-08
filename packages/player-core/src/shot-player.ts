@@ -14,7 +14,7 @@ export class ScoreShotPlayer implements Disposable {
 
   readonly audioDecoder: AudioDecoder = new AudioDecoder(this.audioContext);
 
-  protected audioAnalyser: AnalyserNode;
+  readonly audioAnalyser: AnalyserNode;
 
   protected unionSourceNode: AudioNode;
 

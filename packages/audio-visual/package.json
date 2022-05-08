@@ -1,0 +1,21 @@
+{
+  "name": "audio-visual",
+  "version": "1.0.0",
+  "description": "Visualizer of audio via AudioContext",
+  "keywords": [
+    "Audio Visualizer",
+    "Visualization"
+  ],
+  "main": "dist/index.js",
+  "author": "leonardoyhl",
+  "license": "MIT",
+  "scripts": {
+    "start": "tsc --watch",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^4.0.0"
+  }
+}
