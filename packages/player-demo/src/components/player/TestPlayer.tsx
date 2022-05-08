@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { Note, NoteType, PianoPlugin, ScorePart, ScorePlayer, ScoreShotPlayer, Step } from 'player-core';
 import { Octave } from 'player-core/dist/data-format/octave';
+import AudioVisualizer from './AudioVisualizer';
 
 const scoreParts: ScorePart[] = [
   {
@@ -193,6 +194,8 @@ export default function TestPlayer() {
       <p>ScoreShotPlayer</p>
       <p>Press 'Space' key to siwtch pitch.</p>
       <button style={{padding: '20px 30px'}}>Play</button>
+      <AudioVisualizer analyserNode={playerRef.current.audioAnalyser} />
+      <AudioVisualizer analyserNode={playerRef.current.audioAnalyser} />
     </div>
   );
 }

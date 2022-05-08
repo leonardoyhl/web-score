@@ -4,6 +4,9 @@
   "workspaces": [
     "packages/*"
   ],
+  "scripts": {
+    "start:demo": "cd packages/player-demo && yarn start"
+  },
   "devDependencies": {
     "lerna": "^4.0.0"
   }
