@@ -5,9 +5,13 @@
     "packages/*"
   ],
   "scripts": {
-    "start:demo": "cd packages/player-demo && yarn start"
+    "start": "npm-run-all -p start:*",
+    "start:demo": "cd packages/player-demo && yarn start",
+    "start:player-core": "cd packages/player-core && yarn start",
+    "start:audio-visual": "cd packages/audio-visual && yarn start"
   },
   "devDependencies": {
-    "lerna": "^4.0.0"
+    "lerna": "^4.0.0",
+    "npm-run-all": "^4.1.5"
   }
 }
