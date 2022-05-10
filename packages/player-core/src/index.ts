@@ -1,6 +1,7 @@
 // player
 export { ScorePlayer } from './score-player';
 export { ScoreShotPlayer } from './shot-player';
+export { ScorePartPlayer } from './simple-score-player';
 
 // plugin declare
 export { MusicalInstrumentPlugin } from './musical-instrument-plugin';
