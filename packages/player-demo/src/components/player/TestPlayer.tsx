@@ -192,9 +192,8 @@ export default function TestPlayer() {
   return (
     <div onClick={handleClick}>
       <p>ScoreShotPlayer</p>
-      <p>Press 'Space' key to siwtch pitch.</p>
+      <p>Press 'Space' key to switch pitch.</p>
       <button style={{padding: '20px 30px'}}>Play</button>
-      <AudioVisualizer analyserNode={playerRef.current.audioAnalyser} />
       <AudioVisualizer analyserNode={playerRef.current.audioAnalyser} />
     </div>
   );

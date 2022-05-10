@@ -2,6 +2,8 @@ import React from 'react';
 // import logo from './logo.svg';
 
 import TestPlayer from './components/player/TestPlayer';
+import TestScorePartPlayer from './components/player/TestScorePartPlayer';
+import TestAcousticGrandPiano from './components/player/TestAcousticGrandPiano';
 
 import './App.css';
 
@@ -14,6 +16,8 @@ function App() {
           Edit <code>src/App.tsx</code> and save to reload.
         </p> */}
         <TestPlayer />
+        <TestScorePartPlayer />
+        <TestAcousticGrandPiano />
         {/* <a
           className="App-link"
           href="https://reactjs.org"
