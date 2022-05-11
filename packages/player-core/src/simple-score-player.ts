@@ -124,7 +124,7 @@ export class ScorePartPlayer implements Disposable {
       audioContext.suspend();
       return;
     }
-    requestAnimationFrame(this.loop);
+    setTimeout(this.loop);
   }
 
   private prepareAudioBufferSources(note: Note) {
